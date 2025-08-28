@@ -11,7 +11,7 @@ const ChatBar = () => {
   };
 
   return (
-    <div className="bg-[#FFFFFF1A] border border-[#FFFFFF1A] shadow-xl w-full max-w-[800px] rounded-xl flex items-end gap-2 p-1.5">
+    <div className="bg-[#FFFFFF1A] border border-[#FFFFFF1A] shadow-xl w-full  rounded-xl flex items-end gap-2 p-1.5">
       <textarea
         value={chatInput}
         onChange={(e) => setChatInput(e.target.value)}
