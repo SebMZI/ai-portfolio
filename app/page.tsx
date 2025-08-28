@@ -1,6 +1,7 @@
 import ChatBar from "./_components/ChatBar";
 import ChatMessage from "./_components/ChatMessage";
 import Header from "./_components/Header";
+import { io } from "socket.io-client";
 
 export default function Home() {
   return (
