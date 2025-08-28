@@ -13,14 +13,36 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom right,
+    #f3deff 0%,
+    #ffead5 50%,
+    #ffb3d1 100%
+  );
   font-family: Arial, Helvetica, sans-serif;
+}
+::-webkit-scrollbar {
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(241, 241, 241, 0.1);
+  border-radius: 50px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(136, 136, 136, 0.1);
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #55555581;
+  border-radius: 50px;
+  cursor: pointer;
 }
