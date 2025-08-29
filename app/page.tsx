@@ -50,8 +50,8 @@ export default function Home() {
 
         <div className="max-w-[720px] mx-auto flex flex-col flex-1 py-5 gap-5 w-full min-h-0">
           <div className="w-full pt-5  shrink-0">
-            <h1 className="text-5xl md:text-6xl">Welcome —</h1>
-            <p className="text-xl md:text-2xl mt-3.5">
+            <h1 className="text-4xl md:text-6xl">Welcome —</h1>
+            <p className="text-base md:text-2xl mt-2.5 md:mt-3.5">
               I’m Sebastien’s AI assistant — ask me about his skills, projects,
               and experience.
             </p>
@@ -59,7 +59,7 @@ export default function Home() {
 
           <div className="flex flex-col flex-1 min-h-0">
             <div
-              className="flex-1 overflow-y-auto flex flex-col gap-3 px-2 py-6 md:py-10"
+              className="flex-1 overflow-y-auto flex flex-col gap-3 px-3.5 py-6 md:py-10"
               id="messages"
             >
               {messages?.map((messageObject, i) => (
@@ -84,7 +84,7 @@ export default function Home() {
                 setAssistantIsWriting={setAssistantIsWriting}
               />
               <p className="text-xs text-[#00000080] mt-2.5">
-                AI can make mistakes
+                Be Careful — AI can make mistakes
               </p>
             </div>
           </div>

@@ -18,7 +18,7 @@ const ChatMessage = ({
       }`}
     >
       <div
-        className={` flex flex-col ${
+        className={`max-w-3/4 flex flex-col ${
           message.from === "Recruiter" ? "items-end" : "items-start"
         }`}
       >
@@ -26,7 +26,7 @@ const ChatMessage = ({
           {message.from}
         </p>
         <div
-          className={`w-fit px-2.5 py-3  border ${
+          className={`w-fit  px-2.5 py-3  border ${
             message.from === "Assistant"
               ? "border-[#0000001A] bg-[#0000001A]"
               : "border-[#FFE1B21A] bg-[#FFE1B21A]"
