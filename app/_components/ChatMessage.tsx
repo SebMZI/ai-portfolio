@@ -4,7 +4,13 @@ interface ChatProp {
   message: string;
 }
 
-const ChatMessage = ({ message }: { message: ChatProp }) => {
+const ChatMessage = ({
+  message,
+  isTyping = false,
+}: {
+  message: ChatProp;
+  isTyping?: boolean;
+}) => {
   return (
     <div
       className={`w-full flex ${
@@ -26,9 +32,20 @@ const ChatMessage = ({ message }: { message: ChatProp }) => {
               : "border-[#FFE1B21A] bg-[#FFE1B21A]"
           } rounded-xl shadow-xl`}
         >
-          <p className="text-xs md:text-sm text-[#000000CC]">
-            {message.message}
-          </p>
+          {isTyping ? (
+            message?.message.split("").map((char, index) => (
+              <span
+                key={index}
+                className={`dot text-base inline-block animate-dots`}
+              >
+                {char}
+              </span>
+            ))
+          ) : (
+            <p className={`text-xs md:text-sm text-[#000000CC] `}>
+              {message.message}
+            </p>
+          )}
         </div>
       </div>
     </div>

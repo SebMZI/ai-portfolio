@@ -11,13 +11,17 @@ interface ChatProp {
 
 const ChatBar = ({
   setMessages,
+  setAssistantIsWriting,
+  assistantIsWriting,
 }: {
   setMessages: React.Dispatch<React.SetStateAction<ChatProp[]>>;
+  setAssistantIsWriting: React.Dispatch<React.SetStateAction<boolean>>;
+  assistantIsWriting: boolean;
 }) => {
   const [chatValue, setChatValue] = useState("");
 
   const handleSendChat = () => {
-    if (chatValue.length > 0) {
+    if (chatValue.length > 0 && !assistantIsWriting) {
       const message = {
         from: "Recruiter",
         to: "Assistant",
@@ -26,6 +30,7 @@ const ChatBar = ({
       socket.emit("chat message", message);
       setMessages((prevMessages) => [...prevMessages, message]);
       setChatValue("");
+      setAssistantIsWriting(true);
     }
   };
 

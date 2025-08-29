@@ -12,6 +12,17 @@
   --color-foreground: var(--foreground);
   --font-inter: var(--font-inter);
   --font-title: var(--font-playfair-display);
+  --animate-dots: dots 1.5s ease-in-out infinite;
+  @keyframes dots {
+    0%,
+    ,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,4 +64,14 @@ h1,
 h2,
 h3 {
   font-family: var(--font-playfair-display);
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.dot:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.dot:nth-child(3) {
+  animation-delay: 0.8s;
 }
