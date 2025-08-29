@@ -1,20 +1,45 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { socket } from "../../socket";
 
-const ChatBar = () => {
-  const [chatInput, setChatInput] = useState("");
+interface ChatProp {
+  from: string;
+  to: string;
+  message: string;
+}
+
+const ChatBar = ({
+  setMessages,
+}: {
+  setMessages: React.Dispatch<React.SetStateAction<ChatProp[]>>;
+}) => {
+  const [chatValue, setChatValue] = useState("");
 
   const handleSendChat = () => {
-    console.log(chatInput);
-    setChatInput("");
+    if (chatValue.length > 0) {
+      const message = {
+        from: "Recruiter",
+        to: "Assistant",
+        message: chatValue,
+      };
+      socket.emit("chat message", message);
+      setMessages((prevMessages) => [...prevMessages, message]);
+      setChatValue("");
+    }
   };
 
   return (
     <div className="bg-[#FFFFFF1A] border border-[#FFFFFF1A] shadow-xl w-full  rounded-xl flex items-end gap-2 p-1.5">
       <textarea
-        value={chatInput}
-        onChange={(e) => setChatInput(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            handleSendChat();
+          }
+        }}
+        value={chatValue}
+        onChange={(e) => setChatValue(e.target.value)}
         placeholder="Type a message..."
         rows={1}
         className="bg-transparent flex-1 outline-none text-[10px] md:text-sm resize-none max-h-[400px] break-words overflow-y-auto text-black p-2 rounded-lg"
