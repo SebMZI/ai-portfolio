@@ -52,7 +52,9 @@ docker-compose up --build
 &nbsp;
 
 ### Usage
-<video controls width="1022"> <source src="./public/github_ai_example.mp4" type="video/mp4"> </video>
+<video controls width="1022"> 
+  <source src="./public/github_ai_example.mp4" type="video/mp4">
+</video>
 
 &nbsp;
 
