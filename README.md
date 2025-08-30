@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<img src="./public/github_banner.svg" alt="SMZI Github Banner" />
 
-## Getting Started
+&nbsp;
 
-First, run the development server:
+## 📌 About the Project
+This project is an **AI-powered portfolio** where recruiters can interact with a chatbot assistant to explore my **skills, projects, and journey**.  
+Instead of scrolling through static pages, they can **ask questions** and receive **context-aware responses**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+&nbsp;
+
+## 🚀 Built With
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=git,nextjs,docker" />
+  </a>
+</p>
+
+&nbsp;
+
+## ⚙️ Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/)
+- [Docker](https://www.docker.com/) (Optional)
+- [SMZI Backend](https://github.com/SebMZI/ai-portfolio-backend)
+
+### Installation
+
+1. **Clone the repository**
+```sh
+git clone https://github.com/SebMZI/ai-portfolio.git
+cd ai-portfolio
+```
+2. **Install dependencies**
+```sh
+npm install
+```
+3. **Set environment variables**
+Create a `.env` file in the root directory:
+```sh
+NEXT_PUBLIC_BACKEND_URL=http://localhost:3001
+```
+4. **Run the project**
+```sh
+npm start
+```
+5. **Or run with Docker**
+```sh
+docker-compose up --build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+&nbsp;
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Usage
+<video controls width="1022"> <source src="./public/github_ai_example.mp4" type="video/mp4"> </video>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+&nbsp;
 
-## Learn More
+### 🌟 Features
+- 💬 Interactive chatbot for recruiters
 
-To learn more about Next.js, take a look at the following resources:
+- 📂 Showcase of projects & skills
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- ⚡ Built with Next.js & Docker
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 🎨 Modern, clean UI
 
-## Deploy on Vercel
+&nbsp;
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📍 Roadmap
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [] Add title animation
+
+- [] Add animations on social links
+
+- [] Improve chatbot memory/context
